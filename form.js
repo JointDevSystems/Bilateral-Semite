@@ -1,0 +1,1 @@
+document.querySelectorAll('form.enq').forEach(function(F){F.addEventListener('submit',function(e){e.preventDefault();var f=new FormData(F);location.href='mailto:info@bilateralsemite.com?subject='+encodeURIComponent('Estimate request: '+f.get('Service'))+'&body='+encodeURIComponent(Array.from(f).map(function(p){return p[0]+': '+p[1]}).join('\n'));})});

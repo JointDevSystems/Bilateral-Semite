@@ -1,0 +1,1 @@
+document.querySelectorAll('.nl a').forEach(function(a){a.addEventListener('click',function(){a.closest('nav').classList.remove('o')})});
