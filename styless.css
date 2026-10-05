@@ -13,14 +13,15 @@
   --navy: #15449E; /* for sections*/
   --blue: #15449E; /* for texts*/
 
-  --or: #e0782a;
-  --orx: #c2601a;
+  --or: #d7141a;
+  --orx: #b50f15;
   --red: #fb0004;
 
   --white: #ffffff;
   --iv: #f6f1e9;
   --paper: #f6f1e9;
-  --dk: #14122f;
+  --cover:#eef3fb;
+  --dk: #0a1f44;
   --mu: #a9a7c6;
 
   --line: rgba(246, 241, 233, 0.14);
@@ -46,7 +47,7 @@ html {
 }
 
 body {
-  background: var(--ink);
+  background: var(--cover);
   color: var(--iv);
   font: 400 0.9rem / 1.75 var(--b);
   -webkit-font-smoothing: antialiased;
@@ -193,11 +194,34 @@ nav {
 
   padding-top: env(safe-area-inset-top, 0);
 
+  /* Top of page: fully transparent over the hero */
+  background: rgba(10, 12, 30, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+
+  backdrop-filter: blur(0px) saturate(100%);
+  -webkit-backdrop-filter: blur(0px) saturate(100%);
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease;
+}
+
+/* After scrolling (class added by nav.js): translucent glass */
+nav.stuck {
   background: rgba(10, 12, 30, 0.72);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Mobile menu open: keep the bar readable even at the top of the page */
+nav.o {
+  background: rgba(10, 12, 30, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 nav .w {
@@ -211,10 +235,25 @@ nav .w {
 /* ---------- Top bar ---------- */
 
 .tb {
-  color: var(--mu);
-  background: #0d0c24;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-height: 44px;
+  overflow: hidden;
+
+  color: rgba(255, 255, 255, 0.82);
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.76rem;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    border-color 0.35s ease;
+}
+
+/* The contact strip tucks away once the page scrolls */
+nav.stuck .tb {
+  max-height: 0;
+  opacity: 0;
+  border-bottom-color: transparent;
 }
 
 .tb .w {
@@ -334,27 +373,31 @@ nav .w {
 
 .dd > div {
   display: none;
-
   position: absolute;
   top: 100%;
   left: -18px;
-
   min-width: 250px;
   margin-top: 14px;
   padding: 12px;
-
   background: #15132f;
   border: 1px solid var(--line);
   border-top: 2px solid var(--or);
   border-radius: 0;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-
   backdrop-filter: blur(10px);
 }
 
 .dd:hover > div,
 .dd:focus-within > div {
   display: block;
+}
+
+/* invisible bridge so the menu doesn't close crossing the gap */
+.dd > div::before {
+  content: "";
+  position: absolute;
+  inset: -16px 0 auto;
+  height: 16px;
 }
 
 .dd > div a {
@@ -409,8 +452,9 @@ nav .w {
   display: flex;
   align-items: flex-end;
 
-  min-height: 78vh;
-  padding: 150px 0 56px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 150px 0 72px;
 
   overflow: hidden;
 
@@ -426,9 +470,14 @@ nav .w {
 
   background:
     linear-gradient(
+      180deg,
+      rgba(10, 12, 30, 0.62) 0,
+      rgba(10, 12, 30, 0) 22%
+    ),
+    linear-gradient(
       0deg,
       rgba(14, 13, 36, 0.92),
-      rgba(14, 13, 36, 0.2) 60%,
+      rgba(14, 13, 36, 0.25) 60%,
       rgba(14, 13, 36, 0.5)
     );
 }
@@ -439,10 +488,10 @@ nav .w {
 
   display: grid;
   grid-template-columns: 1.6fr 1fr;
-  align-items: center;
+  align-items: end;
   gap: 56px;
 
-  min-height: 70vh;
+  min-height: 0;
 }
 
 .hero h1 {
@@ -461,10 +510,16 @@ nav .w {
 }
 
 .hero p {
-  max-width: 50ch;
-  margin: 24px 0 32px;
-  color: #dcd8e8;
-  font-size: 1rem;
+  max-width: 46ch;
+  margin: 22px 0 30px;
+  color: #e6e3f0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
 
 .hb {
@@ -505,16 +560,20 @@ nav .w {
     zm 24s ease-in-out infinite alternate;
 }
 
+.sl i:nth-child(1) {
+  animation-delay: -1s;
+}
+
 .sl i:nth-child(2) {
-  animation-delay: 6s;
+  animation-delay: 5s;
 }
 
 .sl i:nth-child(3) {
-  animation-delay: 12s;
+  animation-delay: 11s;
 }
 
 .sl i:nth-child(4) {
-  animation-delay: 18s;
+  animation-delay: 17s;
 }
 
 @keyframes fd {
@@ -570,8 +629,12 @@ nav .w {
 /* ---------- Hero exploration panel ---------- */
 
 .iss {
-  padding-left: 26px;
-  border-left: 1px solid rgba(233, 145, 58, 0.5);
+  padding: 18px 22px 8px 26px;
+  background: rgba(10, 12, 30, 0.38);
+  border-left: 2px solid var(--or);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .iss > b {
@@ -594,6 +657,10 @@ nav .w {
 .iss a span {
   color: var(--mu);
   font-size: 0.8rem;
+}
+
+.iss a:last-child {
+  border-bottom: 0;
 }
 
 .iss a:hover b {
@@ -775,8 +842,7 @@ section {
 
 .feat {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  min-height: 0;
+  grid-template-columns: 0.9fr 1.1fr;;
 }
 
 .feat .im {
@@ -786,7 +852,7 @@ section {
 .feat > div {
   align-self: center;
   max-width: 660px;
-  padding: 44px 48px;
+  padding: 104px 48px;
 }
 
 .feat p {
@@ -855,41 +921,59 @@ section {
 
 .sv {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
   margin-top: 30px;
 }
 
 .sc {
   position: relative;
-
   display: flex;
   align-items: flex-end;
-
-  min-height: 200px;
-  padding: 16px;
-
+  min-height: 300px;
+  padding: 20px;
   overflow: hidden;
-
   background: var(--ink) var(--h) center / cover;
-
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 0;
-
-  transition: none;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
+
+/* Card hover glow */
+.sc:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(215, 20, 26, 0.75);
+
+  box-shadow:
+    0 0 12px rgba(215, 20, 26, 0.35),
+    0 0 30px rgba(215, 20, 26, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
 
 .sc::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
+  transition: background 0.35s ease; /* Make the overlay slightly lighter on hover */
   background:
     linear-gradient(
       0deg,
-      rgba(18, 16, 46, 0.96),
-      rgba(18, 16, 46, 0.2) 65%
+      rgba(5, 24, 66, 0.96),
+      rgba(5, 24, 66, 0.2) 65%
+    );
+}
+
+.sc:hover::before {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5, 24, 66, 0.82),
+      rgba(5, 24, 66, 0.12) 65%
     );
 }
 
@@ -913,11 +997,20 @@ section {
 }
 
 .sc p {
-  display: none;
+  display: block;
+  margin: 8px 0 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .sc b {
-  display: none;
+  display: block;
+  margin-top: 8px;
+  color: var(--or);
+  font: 600 0.65rem var(--b);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 
@@ -1729,11 +1822,13 @@ nav.o .nl {
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   .hero .w {
     grid-template-columns: 1fr;
+    gap: 36px;
     min-height: auto;
   }
 
@@ -1864,7 +1959,15 @@ nav.o .nl {
   }
 
   .iss {
-    padding-left: 18px;
+    padding: 12px 16px 4px 18px;
+  }
+
+  .iss a span {
+    display: none;
+  }
+
+  .iss a {
+    padding: 9px 0;
   }
 
   .pillars div {
@@ -1897,5 +2000,10 @@ nav.o .nl {
 
   .sl i:first-child {
     opacity: 1;
+  }
+
+  nav,
+  .tb {
+    transition: none !important;
   }
 }
