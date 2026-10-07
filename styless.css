@@ -453,8 +453,8 @@ nav.stuck .tb {
   display: flex;
   align-items: flex-end;
 
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 600px;
+  min-height: clamp(600px, 100svh, 860px);
   padding: 150px 0 72px;
 
   overflow: hidden;
@@ -548,14 +548,12 @@ nav.stuck .tb {
 
 .sl i {
   position: absolute;
-  inset: -4%;
-  background-position: center;
+  inset: 0;
+  background-position: var(--pos, center);
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
-  animation:
-    fd 30s linear infinite,
-    zm 30s ease-in-out infinite alternate;
+  animation: fd 30s linear infinite;
 }
 
 .sl i:nth-child(1) {
@@ -614,7 +612,8 @@ nav.stuck .tb {
 /* ---------- Inner-page hero ---------- */
 
 .ph {
-  min-height: 70vh;
+  min-height: 440px;
+  min-height: clamp(440px, 36vw, 640px);
 }
 
 .ph .w {
@@ -1824,8 +1823,8 @@ nav.o .nl {
   }
 
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 560px;
+    min-height: clamp(560px, 100svh, 860px);
   }
 
   .hero .w {
@@ -1835,7 +1834,8 @@ nav.o .nl {
   }
 
   .ph {
-    min-height: 46vh;
+    min-height: 340px;
+    min-height: clamp(340px, 46svh, 420px);
   }
 
   .two,
