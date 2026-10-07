@@ -23,6 +23,7 @@
   --cover:#eef3fb;
   --dk: #0a1f44;
   --mu: #a9a7c6;
+  --mu22: #262628;
 
   --line: rgba(246, 241, 233, 0.14);
   --card: rgba(255, 255, 255, 0.04);
@@ -2008,3 +2009,273 @@ nav.o .nl {
     transition: none !important;
   }
 }
+
+/* ================================
+   ENQUIRY FORM
+================================ */
+
+.enq {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels */
+.enq label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #111827 !important;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Inputs, selects and textarea */
+.enq input,
+.enq select,
+.enq textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #f9fafb;
+    color: #172033;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+/* Textarea */
+.enq textarea {
+    min-height: 115px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Select */
+.enq select {
+    cursor: pointer;
+    appearance: auto;
+}
+
+/* Placeholder / empty inputs */
+.enq input::placeholder,
+.enq textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Focus effect */
+.enq input:focus,
+.enq select:focus,
+.enq textarea:focus {
+    border-color: #f0b319;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(240, 179, 25, 0.15);
+}
+
+/* Hover */
+.enq input:hover,
+.enq select:hover,
+.enq textarea:hover {
+    border-color: #b8bec8;
+}
+
+/* Full-width fields */
+.enq .f {
+    grid-column: 1 / -1;
+}
+
+/* Details textarea */
+.enq .f textarea {
+    width: 100%;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.enq .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 210px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background: var(--red);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(240, 179, 25, 0.25);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Button hover */
+.enq .btn:hover {
+    background: rgb(123, 1, 1);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(240, 179, 25, 0.32);
+}
+
+/* Button click */
+.enq .btn:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   SELECT OPTIONS
+================================ */
+
+.enq select option {
+    color: #172033;
+    background: #ffffff;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+    .enq {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .enq .f {
+        grid-column: auto;
+    }
+
+    .enq .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FAQ (about + home) — added
+   ========================================================= */
+
+.faq { scroll-margin-top: 120px; }
+.faq .l { max-width: 60ch; }
+.faq .l a { color: var(--blue); text-decoration: underline; }
+
+.faq-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 8px; }
+.faq-nav a {
+  padding: 8px 16px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.faq-nav a:hover, .faq-nav a:focus-visible { background: var(--blue); color: var(--white); }
+
+.faq-group { margin-top: 40px; max-width: 880px; scroll-margin-top: 120px; }
+.faq-group h3 { color: var(--red); margin-bottom: 8px; }
+
+.faq details { padding: 20px 0; border-bottom: 1px solid rgba(38, 38, 40, .22); }
+.faq details:first-of-type { border-top: 1px solid rgba(38, 38, 40, .22); }
+.faq summary { color: var(--blue); padding-right: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { color: var(--red); margin-left: 16px; }
+.faq summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.faq details p { color: var(--mu22); line-height: 1.65; }
+.faq details p a { color: var(--blue); text-decoration: underline; }
+
+.faq-more {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  max-width: 880px; margin-top: 48px; padding: 28px 32px;
+  background: var(--cover); border-left: 4px solid var(--red);
+}
+.faq-more h3 { color: var(--blue); margin: 0 0 6px; }
+.faq-more p { color: var(--mu22); margin: 0; max-width: 52ch; }
+
+
+/* =========================================================
+   INSIGHT (blog / articles) — added
+   ========================================================= */
+
+.post-tag { display: inline-block; margin-bottom: 10px; padding: 4px 12px; background: var(--cover); color: var(--blue); font-size: .85rem; font-weight: 600; border-radius: 999px; }
+.post-card h3 { margin-bottom: 10px; }
+.post-card h3 a { color: var(--blue); text-decoration: none; }
+.post-card h3 a:hover { text-decoration: underline; }
+.post-card p { color: var(--mu22); margin-bottom: 18px; }
+.post { max-width: 72ch; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(38, 38, 40, .22); scroll-margin-top: 120px; }
+.post:first-of-type { margin-top: 32px; }
+.post h3 { color: var(--blue); font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 18px; }
+.post p { color: var(--mu22); line-height: 1.75; margin-bottom: 14px; }
+.post a:not(.post-top) { color: var(--blue); text-decoration: underline; }
+.post-top { display: inline-block; margin-top: 10px; color: var(--red); font-weight: 500; }
+
+
+/* =========================================================
+   FAQ PAGE (insight) — centred header, topic tabs, arrow accordion
+   ========================================================= */
+
+.faq-head { text-align: center; }
+.faq-head .l { margin-left: auto; margin-right: auto; }
+
+.faq-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 32px auto 12px; max-width: 880px; }
+.faq-tab {
+  padding: 10px 22px;
+  border: 1px solid rgba(38, 38, 40, .3);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--mu22);
+  font: 600 .9rem var(--b, inherit);
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.faq-tab:hover { border-color: var(--blue); color: var(--blue); }
+.faq-tab.faq-active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+.faq-tab:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+.faq-list { max-width: 880px; margin: 24px auto 0; }
+.faq-list details[hidden] { display: none; }
+.faq-list details:first-of-type { border-top: 0; }
+.faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-weight: 600; }
+.faq-list summary::after { content: "\203A"; float: none; margin: 0; font-size: 1.6rem; line-height: 1; color: var(--red); transition: transform .25s; flex-shrink: 0; }
+.faq-list details[open] summary::after { content: "\203A"; transform: rotate(90deg); }
+
+.faq-ask { margin-left: auto; margin-right: auto; }
+.faq-ask p a { color: var(--blue); text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) { .faq-tab, .faq-list summary::after { transition: none; } }
+
+
+/* =========================================================
+   SOCIAL ICONS (top bar left + footer) — added
+   ========================================================= */
+
+.soc { display: flex; align-items: center; gap: 6px; margin-right: auto; }
+.soc a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: inherit; transition: color .2s, background .2s; }
+.soc svg { width: 15px; height: 15px; }
+.soc a:hover, .soc a:focus-visible { color: var(--or); }
+.soc a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+.soc.soc-ft { margin: 18px 0 0; gap: 10px; }
+.fg .soc a { display: inline-flex; padding: 0; width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, .25); color: var(--white); }
+.fg .soc a:hover, .fg .soc a:focus-visible { color: var(--white); background: var(--or); border-color: var(--or); }
+.fg .soc svg { width: 17px; height: 17px; }
