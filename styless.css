@@ -2367,3 +2367,116 @@ nav.o .nl {
 .fg .soc a { display: inline-flex; padding: 0; width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, .25); color: var(--white); }
 .fg .soc a:hover, .fg .soc a:focus-visible { color: var(--white); background: var(--or); border-color: var(--or); }
 .fg .soc svg { width: 17px; height: 17px; }
+
+
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
+.pre {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgba(10, 31, 68, 0.62), rgba(10, 31, 68, 0.82)),
+    url("images/bcd-office3.jpg") center / cover no-repeat,
+    var(--dk);
+  color: var(--white);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.pre.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pre-seen .pre {
+  display: none;
+}
+
+.pre-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  background: rgba(10, 31, 68, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.pre-ring {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  border-top-color: var(--or);
+  animation: pre-spin 0.9s linear infinite;
+}
+
+.pre-t {
+  font: 500 0.75rem / 1 var(--b);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+@keyframes pre-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pre-ring { animation-duration: 2.4s; }
+  .pre { transition: none; }
+}
+
+
+/* =========================================================
+   BACK TO TOP BUTTON
+   ========================================================= */
+
+.totop {
+  position: fixed;
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--or);
+  color: var(--white);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(10, 31, 68, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.2s ease;
+}
+
+.totop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.totop:hover {
+  background: var(--orx);
+  transform: translateY(-3px);
+}
+
+.totop svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .totop { transition: none; }
+}
