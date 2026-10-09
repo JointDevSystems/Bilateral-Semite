@@ -323,6 +323,59 @@ nav.stuck .tb {
   color: var(--or);
 }
 
+/* Active page indicator (class set by nav.js) */
+.nl > a,
+.nl > .dd > a {
+  position: relative;
+  padding: 6px 0;
+}
+
+.nl > a::before,
+.nl > .dd > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--or);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.nl > a:hover::before,
+.nl > .dd > a:hover::before,
+.nl > a.active::before,
+.nl > .dd > a.active::before {
+  transform: scaleX(1);
+}
+
+.nl > a.active,
+.nl > .dd > a.active {
+  color: var(--or);
+}
+
+/* Current page inside the Services dropdown */
+.dd > div a.active {
+  background: rgba(233, 145, 58, 0.14);
+  box-shadow: inset 3px 0 0 var(--or);
+}
+
+@media (max-width: 1100px) {
+  /* In the mobile menu, a side bar reads better than an underline */
+  .nl > a::before,
+  .nl > .dd > a::before {
+    display: none;
+  }
+
+  .nl > a.active,
+  .nl > .dd > a.active {
+    padding-left: 12px;
+    box-shadow: inset 3px 0 0 var(--or);
+  }
+}
+
 
 /* ---------- CTA ---------- */
 
@@ -554,6 +607,7 @@ nav.stuck .tb {
   background-repeat: no-repeat;
   opacity: 0;
   animation: fd 30s linear infinite;
+  overflow: hidden;
 }
 
 .sl i:nth-child(1) {
@@ -612,8 +666,8 @@ nav.stuck .tb {
 /* ---------- Inner-page hero ---------- */
 
 .ph {
-  min-height: 440px;
-  min-height: clamp(440px, 36vw, 640px);
+  min-height:440px;
+  min-height: clamp(540px, 60vw, 570px);
 }
 
 .ph .w {
@@ -626,6 +680,23 @@ nav.stuck .tb {
   font-size: clamp(2rem, 4.4vw, 3.4rem);
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--white);
+  font: 600 0.64rem var(--b);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.title::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--or);
+}
 
 /* ---------- Hero exploration panel ---------- */
 
@@ -1727,6 +1798,26 @@ blockquote {
   padding-top: 22px;
 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Credit line under the footer's second divider */
+.fc {
+  margin-top: 22px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  text-align: center;
+  font-size: 0.76rem;
+}
+
+.fc a {
+  color: var(--or);
+  font-weight: 600;
+}
+
+.fc a:hover {
+  text-decoration: underline;
 }
 
 

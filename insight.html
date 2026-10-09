@@ -8,6 +8,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styless.css">
+        <link rel="stylesheet" href="cms.css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" size="any">
     </head>
     <body>
         <nav>
@@ -81,7 +83,15 @@
                     </div>
                     <a href="depot.html">Depot</a>
                     <a href="industries.html">Industries</a>
-                    <a href="insight.html">Insight</a>
+                    <div class="dd ">
+                        <a href="insight.html">Insight</a>
+                        <div>
+                            <a href="insight.html#news">Bilateral News<small>Semite SAP &amp; Depot</small></a>
+                            <a href="https://bilateralcontainerdepot.com/" target="_blank" rel="noopener">Bilateral Container Depot<small>Visit the depot website &#8599;</small></a>
+                            <a href="insight.html#articles">Blogs &amp; Articles<small>Guides &amp; insights</small></a>
+                            <a href="insight.html#faq">FAQ<small>Common questions</small></a>
+                        </div>
+                    </div>
                     <a href="contact.html">Contact</a>
                 </div>
                 <a class="cta" href="contact.html">Get estimate</a>
@@ -98,79 +108,28 @@
             </div>
             <div class="w">
                 <div>
-                    <div class="k">Insight</div>
+                    <div class="title">Insight</div>
                     <h1>Notes from the yard.</h1>
                 </div>
             </div>
         </header>
 
-        <section style="background-color: var(--white);">
+        <section id="news" style="background-color: var(--white);">
             <div class="w">
-                <div class="k">Insight</div>
-                <h2 style="color: var(--blue);">Articles and guides.</h2>
-                <p class="l" style="color: var(--mu22);">Practical notes on freight, customs, the depot and getting your cargo moving.</p>
-                <div class="tri">
-                    <article class="gl post-card">
-                        <div class="post-tag">Depot</div>
-                        <h3><a href="#gate-to-road">From gate to road: how a container moves through our depot</a></h3>
-                        <p>Six steps, from the moment you pre-advise us to the moment the truck leaves.</p>
-                        <a class="btn o" href="#gate-to-road">Read article</a>
-                    </article>
-                    <article class="gl post-card">
-                        <div class="post-tag">Freight guide</div>
-                        <h3><a href="#fcl-lcl-break-bulk">FCL, LCL or break bulk: choosing how to ship</a></h3>
-                        <p>A plain-language guide to the main ways cargo travels by sea.</p>
-                        <a class="btn o" href="#fcl-lcl-break-bulk">Read article</a>
-                    </article>
-                    <article class="gl post-card">
-                        <div class="post-tag">Quotes</div>
-                        <h3><a href="#faster-estimate">What to send us for a faster freight estimate</a></h3>
-                        <p>The details that let us reply with a clear estimate the first time.</p>
-                        <a class="btn o" href="#faster-estimate">Read article</a>
-                    </article>
-                </div>
+                <div class="k">Bilateral News</div>
+                <h2 style="color: var(--blue);">News from Bilateral Group.</h2>
+                <p class="l" style="color: var(--mu22);">Updates from Bilateral Semite SAP and Bilateral Container Depot.</p>
+                <a class="btn o depot-link" href="https://bilateralcontainerdepot.com/" target="_blank" rel="noopener">Visit Bilateral Container Depot &#8599;</a>
+                <div data-feed="news"><p class="feed-msg">Loading...</p></div>
             </div>
         </section>
 
-        <section class="svc" id="top-articles">
+        <section class="svc" id="articles">
             <div class="w">
-                <div class="k">Read</div>
-                <h2 style="color: var(--blue);">The articles.</h2>
-                <article class="post" id="gate-to-road">
-                    <div class="post-tag">Depot</div>
-                    <h3>From gate to road: how a container moves through our depot</h3>
-                    <p>A container in our custody is never just parked. Every unit follows the same six steps, so you always know what has happened and what comes next.</p>
-                    <p><strong>1. Pre-advice.</strong> You tell us what is coming and when. This lets us plan space, reefer power and handling before the unit arrives.</p>
-                    <p><strong>2. Gate-in.</strong> At the guarded gate we check the documents and the condition of the unit, and note both.</p>
-                    <p><strong>3. Placement.</strong> The unit is lifted into its planned position. Full, empty and specialist units have separate zones, and stack heights are planned for stability.</p>
-                    <p><strong>4. Custody.</strong> Secure storage on a fenced, floodlit, paved yard, reefer power for temperature-controlled units, and regular checks.</p>
-                    <p><strong>5. Release.</strong> Send us the unit details and the truck information. We check the documents and release only to authorised parties.</p>
-                    <p><strong>6. Gate-out.</strong> An exit check, then confirmation to you.</p>
-                    <p>Because condition notes are made at gate-in and gate-out, and delays are communicated early, there are no surprises. Read more on the <a href="depot.html">depot page</a>.</p>
-                    <a class="post-top" href="#top-articles">Back to all articles</a>
-                </article>
-                <article class="post" id="fcl-lcl-break-bulk">
-                    <div class="post-tag">Freight guide</div>
-                    <h3>FCL, LCL or break bulk: choosing how to ship</h3>
-                    <p>The right choice depends on how much you are shipping and what it looks like. Here is how the main options differ.</p>
-                    <p><strong>FCL (full container load).</strong> One shipper fills a whole container. It suits larger volumes and gives your cargo its own box from origin to destination.</p>
-                    <p><strong>LCL (less than container load).</strong> Your goods share a container with other shippers' cargo. We handle direct LCL consolidation and deconsolidation of ocean, air and road freight, so smaller shipments do not have to wait to fill a full box.</p>
-                    <p><strong>Break bulk and project cargo.</strong> Cargo that does not fit a standard container, such as machinery, vehicles or oversized pieces, can move as break bulk, project cargo or out-of-gauge loads.</p>
-                    <p><strong>Not sure?</strong> Tell us what you are moving and where. We will recommend the option that fits and send a clear estimate. See our <a href="svc-ocean-freight.html">ocean freight</a> and <a href="svc-lcl-consolidation.html">LCL consolidation</a> pages for more.</p>
-                    <a class="post-top" href="#top-articles">Back to all articles</a>
-                </article>
-                <article class="post" id="faster-estimate">
-                    <div class="post-tag">Quotes</div>
-                    <h3>What to send us for a faster freight estimate</h3>
-                    <p>The more precisely you describe the move, the quicker we can price it. Have these ready:</p>
-                    <p><strong>The service you need.</strong> For example ocean freight, air freight, clearing and forwarding, or yard storage.</p>
-                    <p><strong>Your consignment type.</strong> Container, bulk cargo, project cargo, out of gauge, loose cargo or dangerous cargo.</p>
-                    <p><strong>The size.</strong> 20ft, 40ft, out of gauge or loose cargo.</p>
-                    <p><strong>Where it starts and ends.</strong> Our form covers Mombasa, Nairobi, Kampala and Juba. For other routes, add them in the details box.</p>
-                    <p><strong>For depot storage:</strong> the unit type, the quantity and the expected dwell time.</p>
-                    <p>Send it through the <a href="contact.html">contact form</a>, or email <a href="mailto:info@bilateralsemite.com">info@bilateralsemite.com</a>. You can drop your inquiry any time of day.</p>
-                    <a class="post-top" href="#top-articles">Back to all articles</a>
-                </article>
+                <div class="k">Blogs &amp; Articles</div>
+                <h2 style="color: var(--blue);">Articles and guides.</h2>
+                <p class="l" style="color: var(--mu22);">Practical notes on freight, customs, the depot and getting your cargo moving.</p>
+                <div data-feed="blog"><p class="feed-msg">Loading...</p></div>
             </div>
         </section>
 
@@ -687,6 +646,9 @@
                     <span>&copy; Bilateral Semite SAP Ltd. All rights reserved.</span>
                     <span>Part of Bilateral Group</span>
                 </div>
+                <div class="fc">
+                    <span>Website built by <a href="http://jointdevsystems.com/" target="_blank" rel="noopener">Joint Dev Systems</a></span>
+                </div>
             </div>
         </footer>
         <script>
@@ -710,6 +672,8 @@
                 });
             })();
         </script>
+        <script src="cms-config.js"></script>
+        <script src="insight-feed.js"></script>
         <script src="nav.js"></script>
         <script src="reveal.js"></script>
         <script src="form.js"></script>
