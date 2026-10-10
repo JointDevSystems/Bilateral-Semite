@@ -11,7 +11,7 @@
         <link rel="icon" href="images/favicon.ico" type="image/x-icon" size="any">
     </head>
     <body>
-        <nav>
+        <nav >
             <div class="tb">
                 <div class="w">
                     <!-- Social links: replace each # with your page URL -->
@@ -54,10 +54,18 @@
             <div class="w">
                 <a class="lg logo" href="index.html" aria-label="Bilateral Semite SAP Ltd - Home">
                     <img src="images/bslogo-nav.png" alt="Bilateral Semite SAP Ltd" width="158" height="54">
-                </a>                
+                </a>
                 <div class="nl">
                     <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
+                    <div class="dd">
+                        <a href="about.html">About</a>
+                        <div>
+                            <a href="about.html">Who we are<small>Vision, mission &amp; values</small></a>
+                            <a href="network.html">Network &amp; coverage<small>Mombasa to wider East Africa</small></a>
+                            <a href="safety-technology.html">Safety &amp; technology<small>Safe moves, clear visibility</small></a>
+                            <a href="experience.html">Project experience<small>Selected work</small></a>
+                        </div>
+                    </div>
                     <div class="dd big">
                         <a href="services.html">Services</a>
                         <div>
@@ -80,8 +88,15 @@
                                 <a href="svc-bonded-warehousing.html">Bonded warehousing<small>Warehousing</small></a>
                                 <a href="svc-transhipment.html">Transhipment<small>Transfer</small></a>
                             </div>
+                            <div>
+                                <h5>Project &amp; compliance</h5>
+                                <a href="abnormal-cargo.html">Abnormal &amp; project cargo<small>Division</small></a>
+                                <a href="abnormal-cargo.html#equipment">Specialized equipment<small>Trailers &amp; lifting</small></a>
+                                <a href="compliance.html">Customs &amp; compliance<small>KRA, RCTG, KEBS</small></a>
+                            </div>
                         </div>
                     </div>
+                    <a href="abnormal-cargo.html">Project cargo</a>
                     <a href="depot.html">Depot</a>
                     <a href="industries.html">Industries</a>
                     <div class="dd ">
@@ -95,6 +110,8 @@
                     </div>
                     <a href="contact.html">Contact</a>
                 </div>
+
+
                 <a class="cta" href="contact.html">Get estimate</a>
                 <button class="bg" aria-label="Menu" onclick="this.closest('nav').classList.toggle('o')">&#9776;</button>
             </div>
@@ -325,55 +342,75 @@
                     <label>Phone<input name="Phone"></label>
                     <label class="f">Service
                         <select name="Service">
-                            <option>LCL consolidation / deconsolidation</option>
-                            <option>NVOCC services</option>
-                            <option>Air freight</option>
-                            <option>Ocean freight</option>
-                            <option>Road &amp; rail transport</option>
-                            <option>Clearing &amp; forwarding</option>
-                            <option selected>Warehousing</option>
-                            <option>Yard &amp; storage</option>
-                            <option>Handling &amp; reefer power</option>
-                            <option>Haulage &amp; release</option>
-                            <option>Tank containers</option>
-                            <option>Bonded warehousing</option>
-                            <option>Transhipment</option>
-                            <option>Other</option>
-                        </select>
+                    <option>Freight forwarding</option>
+                    <option>Customs clearance</option>
+                    <option>Abnormal / oversized cargo</option>
+                    <option>Project cargo logistics</option>
+                    <option>Heavy-lift &amp; specialized transport</option>
+                    <option>Container transportation</option>
+                    <option>Cross-border &amp; transit cargo</option>
+                    <option>LCL consolidation / deconsolidation</option>
+                    <option>NVOCC services</option>
+                    <option>Air freight</option>
+                    <option>Ocean freight</option>
+                    <option>Road &amp; rail transport</option>
+                    <option>Clearing &amp; forwarding</option>
+                    <option>Warehousing</option>
+                    <option>Yard &amp; storage</option>
+                    <option>Handling &amp; reefer power</option>
+                    <option selected>Haulage &amp; release</option>
+                    <option>Tank containers</option>
+                    <option>Bonded warehousing</option>
+                    <option>Transhipment</option>
+                    <option>Other</option>
+                </select>
                     </label>
                     <label>Consignment type
                         <select name="Consignment">
-                            <option>Container</option>
-                            <option>Bulk cargo</option>
-                            <option>Project cargo</option>
-                            <option>Out of gauge</option>
-                            <option>Loose cargo</option>
-                            <option>Dangerous cargo</option>
-                        </select>
+                    <option>Container</option>
+                    <option>Bulk cargo</option>
+                    <option>Project cargo</option>
+                    <option>Abnormal / oversized</option>
+                    <option>Heavy equipment</option>
+                    <option>Flat-rack / open-top</option>
+                    <option>Tank container</option>
+                    <option>Loose cargo</option>
+                    <option>Dangerous cargo</option>
+                </select>
                     </label>
                     <label>Size
                         <select name="Size">
-                            <option>20ft</option>
-                            <option>40ft</option>
-                            <option>Out of gauge</option>
-                            <option>Loose cargo</option>
-                        </select>
+                    <option>20ft</option>
+                    <option>40ft</option>
+                    <option>Flat-rack / open-top</option>
+                    <option>Out of gauge</option>
+                    <option>Abnormal (dimensions in details)</option>
+                    <option>Loose cargo</option>
+                </select>
                     </label>
                     <label>City of departure
                         <select name="From">
-                            <option>Mombasa</option>
-                            <option>Nairobi</option>
-                            <option>Kampala</option>
-                            <option>Juba</option>
-                        </select>
+                    <option selected>Mombasa</option>
+                    <option>Nairobi</option>
+                    <option>Kampala</option>
+                    <option>Kigali</option>
+                    <option>Goma</option>
+                    <option>Juba</option>
+                    <option>Dar es Salaam</option>
+                    <option>Other (state in details)</option>
+                </select>
                     </label>
                     <label>City of delivery
                         <select name="To">
-                            <option>Nairobi</option>
-                            <option>Kampala</option>
-                            <option>Juba</option>
-                            <option>Mombasa</option>
-                        </select>
+                    <option>Mombasa</option>
+                    <option selected>Nairobi</option>
+                    <option>Kampala</option>
+                    <option>Kigali</option>
+                    <option>Goma</option>
+                    <option>Juba</option>
+                    <option>Dar es Salaam</option>
+                    <option>Other (state in details)</option>
+                </select>
                     </label>
                     <label class="f">Details<textarea name="Details" rows="4"></textarea></label>
                     <div class="f">
@@ -384,87 +421,94 @@
         </section>
 
         <footer class="ft">
-            <div class="w">
-                <div class="fg">
-                    <div>
-                        <div class="lg">Bilateral Semite SAP Ltd</div>
-                        <p style="margin:10px 0;max-width:36ch">A duly registered shipping and freight logistics agency, with a network of branches across East Africa and agents at the major ports of the world.</p>
-                        <p>1st Floor, Faiz Ali Building, Nkrumah Rd, Mombasa<br><a href="tel:+254712309148">+254 712 309 148</a><br>info@bilateralsemite.com<br>customercare@bilateralsemite.com</p>
-                        <div class="soc soc-ft">
-                            <a href="https://www.facebook.com/profile.php?id=61595487230406" aria-label="Bilateral Semite on Facebook" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/company/ke-ecdbilateral/posts/?feedView=all" aria-label="Bilateral Semite on LinkedIn" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/groupbilateral2026/" aria-label="Bilateral Semite on Instagram" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    <circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/>
-                                </svg>
-                            </a>
-                            <a href="https://x.com/groupbilateral" aria-label="Bilateral Semite on X" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                            </a>
-                            <a href="https://wa.me/254712309148" aria-label="Bilateral Semite on WhatsApp" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
-                                    <path fill="currentColor" d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/>
-                                </svg>
-                            </a>
-                        </div>                       
+                <div class="w">
+                    <div class="fg">
+                        <div>
+                            <div class="lg">Bilateral Semite SAP Ltd</div>
+                            <p style="margin:10px 0;max-width:36ch">Freight Forwarding | Customs Clearance | Transport | Project &amp; Abnormal Cargo. A registered logistics company based in Mombasa, serving Kenya and East Africa.</p>
+                            <p>1st Floor, Faiz Ali Building, Nkrumah Rd, Mombasa, Kenya<br><a href="tel:+254712309148">+254 712 309 148</a><br><a href="mailto:info@bilateralsemite.com">info@bilateralsemite.com</a><br>customercare@bilateralsemite.com<br>bilateralsemite.com</p>
+                            <div class="soc soc-ft">
+                                <a href="https://www.facebook.com/profile.php?id=61595487230406" aria-label="Bilateral Semite on Facebook" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/ke-ecdbilateral/posts/?feedView=all" aria-label="Bilateral Semite on LinkedIn" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/groupbilateral2026/" aria-label="Bilateral Semite on Instagram" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/>
+                                    </svg>
+                                </a>
+                                <a href="https://x.com/groupbilateral" aria-label="Bilateral Semite on X" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://wa.me/254712309148" aria-label="Bilateral Semite on WhatsApp" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/>
+                                        <path fill="currentColor" d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Services</h4>
+                            <a href="svc-clearing-forwarding.html">Freight forwarding &amp; clearing</a>
+                            <a href="compliance.html">Customs &amp; regulatory compliance</a>
+                            <a href="abnormal-cargo.html">Abnormal &amp; project cargo</a>
+                            <a href="svc-road-rail.html">Road &amp; rail transport</a>
+                            <a href="svc-ocean-freight.html">Ocean freight</a>
+                            <a href="svc-air-freight.html">Air freight</a>
+                            <a href="svc-nvocc.html">NVOCC services</a>
+                            <a href="svc-lcl-consolidation.html">LCL consolidation / deconsolidation</a>
+                            <a href="svc-tank-containers.html">Tank containers</a>
+                            <a href="svc-warehousing.html">Warehousing</a>
+                            <a href="svc-bonded-warehousing.html">Bonded warehousing</a>
+                            <a href="svc-yard-storage.html">Yard &amp; storage</a>
+                            <a href="svc-handling-reefer.html">Handling &amp; reefer power</a>
+                            <a href="svc-haulage-release.html">Haulage &amp; release</a>
+                            <a href="svc-transhipment.html">Transhipment</a>
+                        </div>
+                        <div>
+                            <h4>Company</h4>
+                            <a href="about.html">Who we are</a>
+                            <a href="network.html">Network &amp; coverage</a>
+                            <a href="safety-technology.html">Safety &amp; technology</a>
+                            <a href="experience.html">Project experience</a>
+                            <a href="depot.html">The depot</a>
+                            <a href="insight.html">Insight</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="http://bilateralsemite.com/img/Bilaterial%20Company%20Profile.pdf">Company profile</a>
+                        </div>
+                        <div>
+                            <h4>Industries</h4>
+                            <a href="industries.html">Oil &amp; gas</a>
+                            <a href="industries.html">Bitumen / asphalt</a>
+                            <a href="industries.html">Construction &amp; infrastructure</a>
+                            <a href="industries.html">Mining &amp; energy</a>
+                            <a href="industries.html">Manufacturing &amp; engineering</a>
+                            <a href="industries.html">Agriculture &amp; FMCG</a>
+                            <a href="industries.html">Automotive</a>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Services</h4>
-                        <a href="svc-lcl-consolidation.html">LCL consolidation / deconsolidation</a>
-                        <a href="svc-nvocc.html">NVOCC services</a>
-                        <a href="svc-air-freight.html">Air freight</a>
-                        <a href="svc-ocean-freight.html">Ocean freight</a>
-                        <a href="svc-road-rail.html">Road &amp; rail transport</a>
-                        <a href="svc-clearing-forwarding.html">Clearing &amp; forwarding</a>
-                        <a href="svc-warehousing.html">Warehousing</a>
-                        <a href="svc-yard-storage.html">Yard &amp; storage</a>
-                        <a href="svc-handling-reefer.html">Handling &amp; reefer power</a>
-                        <a href="svc-haulage-release.html">Haulage &amp; release</a>
-                        <a href="svc-tank-containers.html">Tank containers</a>
-                        <a href="svc-bonded-warehousing.html">Bonded warehousing</a>
-                        <a href="svc-transhipment.html">Transhipment</a>
+                    <div class="fb">
+                        <span>&copy; Bilateral Semite SAP Ltd. All rights reserved.</span>
+                        <span>Part of Bilateral Group</span>
                     </div>
-                    <div>
-                        <h4>Company</h4>
-                        <a href="about.html">About us</a>
-                        <a href="depot.html">The depot</a>
-                        <a href="industries.html">Industries</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="http://bilateralsemite.com/img/Bilaterial%20Company%20Profile.pdf">Company profile</a>
-                    </div>
-                    <div>
-                        <h4>Industries</h4>
-                        <a href="industries.html">Chemicals</a>
-                        <a href="industries.html">Automotive</a>
-                        <a href="industries.html">Consumer goods</a>
-                        <a href="industries.html">Life science</a>
-                        <a href="industries.html">Foreign trade</a>
+                    <div class="fc">
+                        <span>Website built by <a href="http://jointdevsystems.com/" target="_blank" rel="noopener">Joint Dev Systems</a></span>
                     </div>
                 </div>
-                <div class="fb">
-                    <span>&copy; Bilateral Semite SAP Ltd. All rights reserved.</span>
-                    <span>Part of Bilateral Group</span>
-                </div>
-                <div class="fc">
-                    <span>Website built by <a href="http://jointdevsystems.com/" target="_blank" rel="noopener">Joint Dev Systems</a></span>
-                </div>
-            </div>
-        </footer>
+            </footer>
 
-        <script src="nav.js"></script>
+            <script src="nav.js"></script>
         <script src="reveal.js"></script>
         <script src="form.js"></script>
     </body>
