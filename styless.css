@@ -28,8 +28,8 @@
   --line: rgba(246, 241, 233, 0.14);
   --card: rgba(255, 255, 255, 0.04);
 
-  --d: "Playfair Display", Georgia, serif;
-  --b: "Inter", system-ui, sans-serif;
+  --d: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --b: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 
@@ -38,6 +38,7 @@
    ========================================================= */
 
 html {
+  font-size: 18px; /* 17px base for readability */
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
 }
@@ -50,7 +51,7 @@ html {
 body {
   background: var(--cover);
   color: var(--iv);
-  font: 400 0.9rem / 1.75 var(--b);
+  font: 500 1rem / 2 var(--d);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -97,8 +98,8 @@ h1,
 h2,
 h3 {
   font-family: var(--d);
-  font-weight: 400;
-  letter-spacing: -0.005em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.15;
 }
 
@@ -132,7 +133,7 @@ p.l {
   gap: 12px;
   margin-bottom: 14px;
   color: var(--or);
-  font: 600 0.64rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
@@ -158,7 +159,7 @@ p.l {
   border-radius: 0;
   box-shadow: none;
   cursor: pointer;
-  font: 600 0.68rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition:
@@ -183,6 +184,18 @@ p.l {
   color: #ffffff;
 }
 
+.btn.cargo {
+  background: transparent;
+  color: var(--iv);
+  border: 1px solid rgba(246, 241, 233, 0.5);
+}
+  
+.btn.cargo:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+
 .btn2{
   display: inline-block;
   padding: 13px 24px;
@@ -192,7 +205,7 @@ p.l {
   border-radius: 0;
   box-shadow: none;
   cursor: pointer;
-  font: 600 0.68rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition:
@@ -263,7 +276,7 @@ nav .w {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 95px;
 }
 
 
@@ -276,7 +289,7 @@ nav .w {
   color: rgba(255, 255, 255, 0.82);
   background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
 
   transition:
     max-height 0.35s ease,
@@ -319,7 +332,7 @@ nav.stuck .tb {
   display: block;
   margin-top: -3px;
   color: var(--or);
-  font: 500 0.6rem var(--b);
+  font: 500 0.78rem var(--b);
   letter-spacing: 0.2em;
 }
 
@@ -346,10 +359,10 @@ nav.stuck .tb {
 .nl {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 
-  font: 500 0.68rem var(--b);
-  letter-spacing: 0.14em;
+  font: 500 0.76rem var(--b);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -421,7 +434,7 @@ nav.stuck .tb {
   border: 1px solid var(--or);
   border-radius: 0;
 
-  font: 600 0.64rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -494,7 +507,7 @@ nav.stuck .tb {
 
   border-radius: 0;
 
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -506,13 +519,13 @@ nav.stuck .tb {
 .dd small {
   display: block;
   color: var(--mu);
-  font-size: 0.74rem;
+  font-size: 0.84rem;
 }
 
 .dd h5 {
   padding: 6px 12px;
   color: var(--or);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.14em;
 }
@@ -720,7 +733,7 @@ nav.stuck .tb {
   gap: 12px;
   margin-bottom: 14px;
   color: var(--white);
-  font: 600 0.64rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
@@ -745,7 +758,7 @@ nav.stuck .tb {
 
 .iss > b {
   color: var(--or);
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   letter-spacing: 0.14em;
 }
 
@@ -762,7 +775,7 @@ nav.stuck .tb {
 
 .iss a span {
   color: var(--mu);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
 }
 
 .iss a:last-child {
@@ -832,7 +845,7 @@ section {
 .tri li,
 .chr dd {
   color: var(--mu);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
 }
 
 
@@ -936,7 +949,7 @@ section {
 
 .pillars p {
   color: var(--mu);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
 }
 
 
@@ -1088,7 +1101,7 @@ section {
 
 .sc em {
   color: var(--or);
-  font-size: 0.6rem;
+  font-size: 0.84rem;
   font-style: normal;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1104,7 +1117,7 @@ section {
   display: block;
   margin: 8px 0 10px;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   line-height: 1.5;
 }
 
@@ -1112,7 +1125,7 @@ section {
   display: block;
   margin-top: 8px;
   color: var(--or);
-  font: 600 0.65rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1150,12 +1163,12 @@ section {
 .flow b {
   display: block;
   margin: 8px 0;
-  font: 500 1.05rem var(--d);
+  font: 600 1.15rem var(--d);
 }
 
 .flow span {
   color: var(--mu);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
 }
 
 
@@ -1253,7 +1266,7 @@ section {
 
 .stats span {
   color: var(--mu);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 
@@ -1296,7 +1309,7 @@ section {
   padding: 6px 12px;
   background: var(--or);
   color: #fff;
-  font: 600 0.58rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0;
@@ -1384,7 +1397,7 @@ section {
 
 .lb-count {
   color: var(--or);
-  font: 600 0.68rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.2em;
 }
 
@@ -1584,7 +1597,7 @@ label {
 
   color: var(--mu);
 
-  font: 600 0.64rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -1725,7 +1738,7 @@ dt {
 dd {
   margin-top: 5px;
   color: var(--mu);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 
 
@@ -1748,7 +1761,7 @@ dd {
 .fx small {
   display: block;
   color: var(--mu);
-  font: 400 0.78rem var(--b);
+  font: 400 0.9rem var(--b);
 }
 
 .ban {
@@ -1793,7 +1806,7 @@ blockquote {
   border-top: 1px solid rgba(233, 145, 58, 0.3);
 
   color: var(--mu);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
 }
 
 .fg {
@@ -1806,7 +1819,7 @@ blockquote {
   margin-bottom: 12px;
   color: var(--or);
 
-  font: 600 0.64rem var(--b);
+  font: 600 0.78rem var(--b);
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
@@ -1840,7 +1853,7 @@ blockquote {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
   text-align: center;
-  font-size: 0.76rem;
+  font-size: 0.84rem;
 }
 
 .fc a {
@@ -2154,7 +2167,7 @@ nav.o .nl {
     flex-direction: column;
     gap: 8px;
     color: #111827 !important;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.2px;
 }
@@ -2171,7 +2184,7 @@ nav.o .nl {
     background: #f9fafb;
     color: #172033;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
     transition:
         border-color 0.25s ease,
@@ -2241,7 +2254,7 @@ nav.o .nl {
     background: var(--red);
     color: var(--white);
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 0.2px;
     cursor: pointer;
@@ -2309,7 +2322,7 @@ nav.o .nl {
   border: 1px solid var(--blue);
   border-radius: 999px;
   color: var(--blue);
-  font-size: .9rem;
+  font-size: 1.0rem;
   font-weight: 500;
   text-decoration: none;
 }
@@ -2340,7 +2353,7 @@ nav.o .nl {
    INSIGHT (blog / articles) — added
    ========================================================= */
 
-.post-tag { display: inline-block; margin-bottom: 10px; padding: 4px 12px; background: var(--cover); color: var(--blue); font-size: .85rem; font-weight: 600; border-radius: 999px; }
+.post-tag { display: inline-block; margin-bottom: 10px; padding: 4px 12px; background: var(--cover); color: var(--blue); font-size: 0.95rem; font-weight: 600; border-radius: 999px; }
 .post-card h3 { margin-bottom: 10px; }
 .post-card h3 a { color: var(--blue); text-decoration: none; }
 .post-card h3 a:hover { text-decoration: underline; }
@@ -2452,7 +2465,7 @@ nav.o .nl {
 }
 
 .pre-t {
-  font: 500 0.75rem / 1 var(--b);
+  font: 500 0.9rem / 1 var(--b);
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
@@ -2545,7 +2558,7 @@ nav.o .nl {
 .cols li { break-inside: avoid; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
-.tags li { border: 1px solid rgba(21, 68, 158, 0.35); color: var(--blue); font-weight: 500; font-size: 0.82rem; }
+.tags li { border: 1px solid rgba(21, 68, 158, 0.35); color: var(--blue); font-weight: 500; font-size: 0.95rem; }
 .tags li:not(:has(a)) { padding: 9px 16px; }
 .tags a { display: block; padding: 9px 16px; }
 .tags li:has(a):hover,
@@ -2562,16 +2575,16 @@ nav.o .nl {
   width: 12px; height: 12px; border-radius: 50%; background: var(--or);
 }
 .corr b { display: block; color: var(--blue); font: 500 1.08rem var(--d); }
-.corr span { display: block; margin-top: 4px; font-size: 0.8rem; line-height: 1.5; }
+.corr span { display: block; margin-top: 4px; font-size: 0.95rem; line-height: 1.5; }
 
 /* Corporate information */
 .corp { display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; margin: 30px 0 0; }
 .corp div { padding: 14px 0; border-top: 1px solid rgba(21, 68, 158, 0.22); }
-.corp dt { color: var(--blue); font-weight: 600; font-size: 0.8rem; }
+.corp dt { color: var(--blue); font-weight: 600; font-size: 0.95rem; }
 .corp dd { margin: 2px 0 0; color: var(--mu22); }
 .corp a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
 
-.note { max-width: 68ch; margin-top: 22px; padding-left: 14px; border-left: 2px solid var(--or); font-size: 0.82rem; }
+.note { max-width: 68ch; margin-top: 22px; padding-left: 14px; border-left: 2px solid var(--or); font-size: 0.95rem; }
 
 @media (max-width: 1100px) { .flow.n4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 900px) {
@@ -2588,3 +2601,25 @@ nav.o .nl {
 
 .btn.o2 { background: transparent; color: var(--blue); border: 1px solid var(--blue); }
 .btn.o2:hover { background: var(--or); border-color: var(--or); color: #fff; }
+/* =========================================================
+   NAV LAYOUT (desktop): logo far left, links centred, CTA far right
+   ========================================================= */
+@media (min-width: 1101px) {
+  nav > .w {
+    max-width: none;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  nav > .w > .lg.logo { justify-self: start; }
+  nav > .w > .nl      { justify-self: center; }
+  nav > .w > .cta     { justify-self: end; }
+}
+
+.web-logo{
+  width: 260px; 
+  height: 80px;
+}
