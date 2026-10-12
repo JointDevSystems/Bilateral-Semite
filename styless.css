@@ -1,4 +1,9 @@
 /* =========================================================
+   PREMIUM FONT SYSTEM - 4 Luxury Typography Styles
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700&display=swap');
+
+/* =========================================================
    BILATERAL SEMITE SAP LTD
    Main Stylesheet
    ========================================================= */
@@ -28,8 +33,24 @@
   --line: rgba(246, 241, 233, 0.14);
   --card: rgba(255, 255, 255, 0.04);
 
-  --d: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --b: "Source Serif 4", Georgia, "Times New Roman", serif;
+  /* 1. ROYAL LUXURY - Playfair Display + Manrope */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Manrope', Arial, sans-serif;
+
+  /* 2. HIGH-FASHION LUXURY */
+  --font-didot: 'Didot', 'Bodoni MT', Georgia, serif;
+
+  /* 3. ARISTOCRATIC & TIMELESS */
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+
+  /* 4. OPULENT & DRAMATIC */
+  --font-bodoni: 'Bodoni Moda', Didot, Georgia, serif;
+
+  /* Default font aliases (used across this stylesheet) */
+  --d: var(--font-heading);   /* headings / display */
+  --body-font: var(--font-body);
+  --b: var(--font-body);      /* labels, buttons, small UI text */
+  --c: var(--font-heading);
 }
 
 
@@ -51,7 +72,7 @@ html {
 body {
   background: var(--cover);
   color: var(--iv);
-  font: 500 1rem / 2 var(--d);
+  font: 500 1rem / 2 var(--body-font);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -96,11 +117,23 @@ textarea {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--d);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.025em;
   line-height: 1.15;
+}
+
+/* Navigation and form controls */
+nav,
+button,
+input,
+select,
+textarea {
+  font-family: var(--body-font);
 }
 
 h2 {
@@ -2623,3 +2656,21 @@ nav.o .nl {
   width: 260px; 
   height: 80px;
 }
+
+/* =========================================================
+   FONT STYLE UTILITIES (switch any element's font)
+   ========================================================= */
+
+.eyebrow {
+  font-family: var(--body-font);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.font-playfair  { font-family: var(--font-heading); }
+.font-didot     { font-family: var(--font-didot); }
+.font-cormorant { font-family: var(--font-cormorant); }
+.font-bodoni    { font-family: var(--font-bodoni); }
+.font-manrope   { font-family: var(--font-body); }
