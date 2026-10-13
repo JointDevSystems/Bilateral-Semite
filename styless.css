@@ -343,7 +343,7 @@ nav .w {
 /* Logo size in px: change width/height here (desktop) */
 .nav-left .lg.logo img {
   display: block;
-  width: 580px;
+  width: 600px;
   height: 200px;
   max-width: 100%;
   object-fit: contain;
